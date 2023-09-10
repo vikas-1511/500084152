@@ -10,7 +10,7 @@ function App() {
   const [accessToken, setAccessToken] = useState('');
 
   useEffect(() => {
-    // Function to register and obtain the authorization token
+    
     const registerCompany = async () => {
       try {
         const response = await axios.post(`${API_BASE_URL}/register`, {
@@ -51,14 +51,14 @@ export default App;
 // SingleTrain.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { API_BASE_URL } from './config'; // Removed CLIENT_ID and CLIENT_SECRET
+import { API_BASE_URL } from './config';
 
 function SingleTrain({ accessToken, match }) {
   const { trainNumber } = match.params;
   const [trainDetails, setTrainDetails] = useState(null);
 
   useEffect(() => {
-    // Function to fetch and display a single train's details
+    
     const fetchSingleTrain = async () => {
       try {
         const response = await axios.get(`${API_BASE_URL}/trains/${trainNumber}`, {
